@@ -13,7 +13,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="WA Order System — Portfolio"
+  title="WA Order System — Tema WooCommerce WA"
   description="Sistem order via WhatsApp. Pelanggan pilih produk, klik tombol — pesan terkirim otomatis ke WhatsApp toko Anda. Tersedia sebagai self-hosted, tema WordPress, dan modul Odoo."
 >
   <Cursor />
@@ -224,14 +224,26 @@ import Footer from "../components/Footer.astro";
 
     // Update <title> and <meta description>
     if (lang === "en") {
-      document.title = "WA Order System — Portfolio";
+      document.title = "WA Order System — WhatsApp Online Store";
       const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute("content", "WhatsApp Order System. Customers browse products, click a button — orders are automatically sent to your store's WhatsApp.");
+      if (metaDesc) metaDesc.setAttribute("content", "WhatsApp online store theme. Customers browse products, click a button — orders are automatically sent to your store's WhatsApp.");
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute("content", "WhatsApp online store theme. Customers browse products, click a button — orders are automatically sent to your store's WhatsApp.");
+      const keywords = document.querySelector('meta[name="keywords"]');
+      if (keywords) keywords.setAttribute("content", "whatsapp online store, wa order wordpress, wa order theme wordpress, whatsapp ordering system");
     } else {
-      document.title = "WA Order System — Portfolio";
+      document.title = "WA Order System — Tema WooCommerce WA";
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", "Sistem order via WhatsApp. Pelanggan pilih produk, klik tombol — pesan terkirim otomatis ke WhatsApp toko Anda.");
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute("content", "Sistem order via WhatsApp. Pelanggan pilih produk, klik tombol — pesan terkirim otomatis ke WhatsApp toko Anda.");
+      const keywords = document.querySelector('meta[name="keywords"]');
+      if (keywords) keywords.setAttribute("content", "wa order wordpress, wa order theme wordpress, whatsapp online store, sistem order whatsapp");
     }
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", document.title);
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute("content", document.title);
 
     // Translate text nodes
     document.querySelectorAll("[data-i18n]").forEach((el) => {
