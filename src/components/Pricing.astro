@@ -1,0 +1,291 @@
+---
+// Pricing.astro - Pricing section with 3 plans
+---
+
+<section class="section" id="harga" style="padding-top: 0;">
+  <div class="section-tag" data-i18n="pricing_tag">Investasi</div>
+  <h2><span data-i18n="pricing_h2_line1">Harga Transparan,</span><br /><em data-i18n="pricing_h2_em">Tanpa Biaya Tersembunyi</em></h2>
+  <p class="section-lead" data-i18n="pricing_lead">
+    Pilih paket yang sesuai kebutuhan. Semua paket termasuk source code — Anda
+    memiliki sistem sepenuhnya.
+  </p>
+
+  <div class="pricing-grid">
+    <!-- Plan 1: Self Hosted -->
+    <div class="pricing-card reveal">
+      <div class="price-tier" data-i18n="plan1_tier">Self Hosted</div>
+      <div class="price-num">
+        <span data-i18n="plan1_price">Rp 1,5jt</span>
+        <span class="period" data-i18n="plan1_period">/ sekali bayar</span>
+      </div>
+      <div class="price-desc" data-i18n="plan1_desc">Source code lengkap Node.js + Docker. Deploy di server sendiri. Support instalasi via dokumentasi.</div>
+      <ul class="price-features">
+        <li data-i18n="plan1_f1">Source code penuh (Node.js)</li>
+        <li data-i18n="plan1_f2">Docker Compose config</li>
+        <li data-i18n="plan1_f3">Admin Dashboard React</li>
+        <li data-i18n="plan1_f4">Dokumentasi instalasi</li>
+        <li data-i18n="plan1_f5">1 bulan support email</li>
+        <li data-i18n="plan1_f6">Update minor gratis</li>
+      </ul>
+      <a
+        href="https://wa.me/6289670005828?text=Halo,%20saya%20tertarik%20paket%20Self%20Hosted%20WA%20Order"
+        class="btn-card btn-card-outline"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="pricing_btn"
+        data-wa-key="pricing_wa1"
+      >
+        Pesan Sekarang
+      </a>
+    </div>
+
+    <!-- Plan 2: WordPress Plugin (Featured) -->
+    <div class="pricing-card reveal featured">
+      <div class="price-tier" data-i18n="plan2_tier">WordPress Theme</div>
+      <div class="price-num">
+        <span data-i18n="plan2_price">Rp 800rb</span>
+        <span class="period" data-i18n="plan2_period">/ sekali bayar</span>
+      </div>
+      <div class="price-desc" data-i18n="plan2_desc">Tema WordPress siap pakai. One click install dalam 5 menit. Cocok untuk pemilik toko web yang ingin terima order via WA.</div>
+      <ul class="price-features">
+        <li data-i18n="plan2_f1">File tema .zip</li>
+        <li data-i18n="plan2_f2">Katalog & cart bawaan</li>
+        <li data-i18n="plan2_f3">Tombol order di produk</li>
+        <li data-i18n="plan2_f4">Notifikasi admin WA</li>
+        <li data-i18n="plan2_f5">Template pesan kustom</li>
+        <li data-i18n="plan2_f6">3 bulan support</li>
+        <li data-i18n="plan2_f7">Update gratis 1 tahun</li>
+      </ul>
+      <a
+        href="https://wa.me/6289670005828?text=Halo,%20saya%20tertarik%20paket%20WordPress%20Theme%20WA%20Order"
+        class="btn-card btn-card-solid"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="pricing_btn"
+        data-wa-key="pricing_wa2"
+      >
+        Pesan Sekarang
+      </a>
+    </div>
+
+    <!-- Plan 3: Odoo Module -->
+    <div class="pricing-card reveal">
+      <div class="price-tier" data-i18n="plan3_tier">Odoo Module</div>
+      <div class="price-num">
+        <span data-i18n="plan3_price">Rp 3jt</span>
+        <span class="period" data-i18n="plan3_period">/ sekali bayar</span>
+      </div>
+      <div class="price-desc" data-i18n="plan3_desc">Modul Odoo 16/17 terintegrasi penuh dengan Sales, Invoice, dan Inventory. Untuk bisnis skala menengah ke atas.</div>
+      <ul class="price-features">
+        <li data-i18n="plan3_f1">Modul Odoo 16 & 17</li>
+        <li data-i18n="plan3_f2">Integrasi Sales & Invoice</li>
+        <li data-i18n="plan3_f3">Notif status pengiriman</li>
+        <li data-i18n="plan3_f4">Multi-company support</li>
+        <li data-i18n="plan3_f5">Instalasi oleh tim kami</li>
+        <li data-i18n="plan3_f6">3 bulan support penuh</li>
+        <li data-i18n="plan3_f7">Customisasi minor gratis</li>
+      </ul>
+      <a
+        href="https://wa.me/6289670005828?text=Halo,%20saya%20tertarik%20modul%20Odoo%20WA%20Order"
+        class="btn-card btn-card-outline"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="pricing_btn"
+        data-wa-key="pricing_wa3"
+      >
+        Pesan Sekarang
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section-tag::before {
+    content: "";
+    width: 20px;
+    height: 1px;
+    background: var(--green);
+  }
+
+  .section h2 {
+    font-family: "Fraunces", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .section h2 em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .section-lead {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 3rem;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .pricing-card {
+    border: 1px solid rgba(245, 242, 232, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .pricing-card:hover {
+    border-color: rgba(37, 211, 102, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .pricing-card.featured {
+    border-color: var(--green);
+    background: rgba(37, 211, 102, 0.04);
+  }
+
+  .pricing-card.featured::before {
+    content: attr(data-popular-label);
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: var(--green);
+    color: var(--ink);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    font-family: "Syne", sans-serif;
+    white-space: nowrap;
+  }
+
+  .price-tier {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .price-num {
+    font-family: "Fraunces", serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .price-num .period {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-family: "DM Mono", monospace;
+  }
+
+  .price-desc {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(245, 242, 232, 0.06);
+    margin-top: 0.25rem;
+  }
+
+  .price-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .price-features li {
+    font-size: 0.72rem;
+    color: rgba(245, 242, 232, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .price-features li::before {
+    content: "→";
+    color: var(--green);
+    font-size: 0.65rem;
+  }
+
+  .btn-card {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.8rem;
+    border-radius: 100px;
+    font-family: "Syne", sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+  }
+
+  .btn-card-outline {
+    border: 1px solid rgba(245, 242, 232, 0.2);
+    color: var(--cream);
+  }
+
+  .btn-card-outline:hover {
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  .btn-card-solid {
+    background: var(--green);
+    color: var(--ink);
+  }
+
+  .btn-card-solid:hover {
+    background: var(--lime);
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 4rem 1.5rem;
+    }
+
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

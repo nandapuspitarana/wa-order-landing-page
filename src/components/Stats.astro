@@ -1,0 +1,70 @@
+---
+// Stats.astro - Statistics strip component
+---
+
+<div class="stats">
+  <div class="stat reveal">
+    <span class="stat-num">3</span>
+    <span class="stat-label" data-i18n="stat1_label">Platform Tersedia</span>
+  </div>
+  <div class="stat reveal">
+    <span class="stat-num">24/7</span>
+    <span class="stat-label" data-i18n="stat2_label">Bot Aktif Otomatis</span>
+  </div>
+  <div class="stat reveal">
+    <span class="stat-num">100%</span>
+    <span class="stat-label" data-i18n="stat3_label">Kontrol Data Anda</span>
+  </div>
+  <div class="stat reveal">
+    <span class="stat-num">∞</span>
+    <span class="stat-label" data-i18n="stat4_label">Skalabilitas Order</span>
+  </div>
+</div>
+
+<style>
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(245, 242, 232, 0.06);
+    border-bottom: 1px solid rgba(245, 242, 232, 0.06);
+  }
+
+  .stat {
+    padding: 2.5rem 2rem;
+    border-right: 1px solid rgba(245, 242, 232, 0.06);
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .stat:last-child {
+    border-right: none;
+  }
+
+  .stat:hover {
+    background: rgba(37, 211, 102, 0.04);
+  }
+
+  .stat-num {
+    font-family: "Fraunces", serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--green);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,249 @@
+---
+// Solutions.astro - Three platform cards section
+---
+
+<section class="section" id="solutions">
+  <div class="section-tag" data-i18n="sol_tag">Pilih Platform</div>
+  <h2><span data-i18n="sol_h2_line1">Tiga Cara Deploy</span><br /><em data-i18n="sol_h2_em">Satu Tujuan</em></h2>
+  <p class="section-lead" data-i18n="sol_lead">
+    Kami menyediakan solusi WA Order yang fleksibel — sesuaikan dengan
+    infrastruktur dan kebutuhan bisnis Anda.
+  </p>
+
+  <div class="cards reveal">
+    <!-- Card 1: Self Hosted -->
+    <div class="card">
+      <div class="card-badge badge-flexible" data-i18n="sol1_badge">Fleksibel</div>
+      <div class="card-icon">🖥️</div>
+      <div class="card-tag">Self Hosted</div>
+      <h3 data-i18n="sol1_title">Node.js / Docker App</h3>
+      <p data-i18n="sol1_desc">Deploy di server Anda sendiri. Full control atas data, kustomisasi, dan integrasi apapun. Cocok untuk developer dan bisnis yang butuh privasi penuh.</p>
+      <ul class="card-features">
+        <li data-i18n="sol1_f1">WhatsApp via Baileys / WWebJS</li>
+        <li data-i18n="sol1_f2">Backend Node.js + Express</li>
+        <li data-i18n="sol1_f3">Database MySQL / MongoDB</li>
+        <li data-i18n="sol1_f4">REST API untuk integrasi</li>
+        <li data-i18n="sol1_f5">Docker Compose siap pakai</li>
+        <li data-i18n="sol1_f6">Admin Dashboard (React)</li>
+        <li data-i18n="sol1_f7">Multi-session WA support</li>
+      </ul>
+    </div>
+    <!-- Card 2: WordPress Plugin -->
+    <div class="card">
+      <div class="card-badge badge-popular" data-i18n="sol2_badge">Populer</div>
+      <div class="card-icon">🔌</div>
+      <div class="card-tag">WordPress Theme</div>
+      <h3 data-i18n="sol2_title">Tema Siap Pakai</h3>
+      <p data-i18n="sol2_desc">Tema WordPress siap pakai tanpa perlu instalasi tambahan. Pasang, aktifkan, dan mulai terima order WA dari toko online Anda dalam hitungan menit.</p>
+      <ul class="card-features">
+        <li data-i18n="sol2_f1">Tema .zip siap install</li>
+        <li data-i18n="sol2_f2">Tidak butuh plugin tambahan</li>
+        <li data-i18n="sol2_f3">Notif order real-time ke WA</li>
+        <li data-i18n="sol2_f4">Tombol "Pesan via WA" di produk</li>
+        <li data-i18n="sol2_f5">Template pesan kustom</li>
+        <li data-i18n="sol2_f6">Support multi-admin WA</li>
+        <li data-i18n="sol2_f7">Compatible WordPress 6.x</li>
+      </ul>
+    </div>
+    <!-- Card 3: Odoo Module -->
+    <div class="card">
+      <div class="card-badge badge-enterprise" data-i18n="sol3_badge">Enterprise</div>
+      <div class="card-icon">⚙️</div>
+      <div class="card-tag">Odoo Module</div>
+      <h3 data-i18n="sol3_title">Odoo 16/17 Integration</h3>
+      <p data-i18n="sol3_desc">Modul Odoo yang mengintegrasikan WhatsApp langsung ke alur penjualan, faktur, dan inventori. Ideal untuk bisnis yang sudah menggunakan Odoo ERP.</p>
+      <ul class="card-features">
+        <li data-i18n="sol3_f1">Modul Odoo 16 & 17</li>
+        <li data-i18n="sol3_f2">Sinkron Sales Order & Invoice</li>
+        <li data-i18n="sol3_f3">Kirim konfirmasi order via WA</li>
+        <li data-i18n="sol3_f4">Reminder pembayaran otomatis</li>
+        <li data-i18n="sol3_f5">Notif status pengiriman</li>
+        <li data-i18n="sol3_f6">Multi-company support</li>
+        <li data-i18n="sol3_f7">Log percakapan di Chatter</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section-tag::before {
+    content: "";
+    width: 20px;
+    height: 1px;
+    background: var(--green);
+  }
+
+  .section h2 {
+    font-family: "Fraunces", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .section h2 em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .section-lead {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 3rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(245, 242, 232, 0.06);
+    border: 1px solid rgba(245, 242, 232, 0.06);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--ink);
+    padding: 2.5rem;
+    position: relative;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .card:hover {
+    background: #0f1a16;
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--green);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.2);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-tag {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+
+  .card h3 {
+    font-family: "Syne", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--cream);
+  }
+
+  .card p {
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .card-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .card-features li {
+    font-size: 0.7rem;
+    color: rgba(245, 242, 232, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card-features li::before {
+    content: "✓";
+    color: var(--green);
+    font-size: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+
+  .badge-popular {
+    background: var(--green);
+    color: var(--ink);
+  }
+
+  .badge-flexible {
+    background: rgba(170, 238, 68, 0.15);
+    color: var(--lime);
+    border: 1px solid rgba(170, 238, 68, 0.3);
+  }
+
+  .badge-enterprise {
+    background: rgba(245, 242, 232, 0.08);
+    color: var(--cream);
+    border: 1px solid rgba(245, 242, 232, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 4rem 1.5rem;
+    }
+
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

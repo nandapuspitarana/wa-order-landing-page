@@ -1,0 +1,320 @@
+---
+// Hero.astro - Hero section with WA chat mockup
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        <span data-i18n="hero_badge">Sistem Order via WhatsApp</span>
+      </div>
+      <h1>
+        <span data-i18n="hero_h1_from">Dari</span> <em data-i18n="hero_h1_cart">Keranjang</em><br />
+        <span data-i18n="hero_h1_direct">Langsung ke</span><br />
+        <span class="outline" data-i18n="hero_h1_wa">WhatsApp</span>
+      </h1>
+      <p data-i18n="hero_p">
+        Pelanggan pilih produk, klik tombol — pesan terkirim otomatis ke
+        WhatsApp toko Anda lengkap dengan daftar item dan total harga. Tersedia
+        sebagai self-hosted, tema WordPress, dan modul Odoo.
+      </p>
+      <div class="hero-actions">
+        <a href="#solutions" class="btn-primary" data-i18n="hero_btn_solutions"> 🚀 Lihat Solusi </a>
+        <a
+          href="https://wa.me/6289670005828"
+          class="btn-ghost"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="hero_btn_demo"
+        >
+          💬 Demo Langsung
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-mockup">
+      <div class="wa-chat">
+        <div class="wa-header">
+          <div class="wa-avatar">🛍️</div>
+          <div class="wa-header-info">
+            <h4 data-i18n="wa_shop_name">Toko Online Saya</h4>
+            <p data-i18n="wa_online">● online</p>
+          </div>
+        </div>
+        <div class="wa-body">
+          <div class="msg msg-out">
+            <span data-i18n-html="wa_msg1">Halo, saya ingin pesan:<br />🛒 <strong>Keranjang Saya:</strong><br />• Kaos Polos (M) x2 — Rp 170.000<br />• Hoodie Abu (L) x1 — Rp 195.000<br /><br /><strong>Total: Rp 365.000</strong></span>
+            <div class="msg-time">09:41</div>
+          </div>
+          <div class="msg msg-in">
+            <span data-i18n-html="wa_msg2">Halo kak! 👋 Pesanan diterima!<br /><br />Boleh minta alamat pengiriman lengkapnya? 📍</span>
+            <div class="msg-time">09:41</div>
+          </div>
+          <div class="msg msg-out">
+            <span data-i18n="wa_msg3">Jl. Merdeka No. 12, Bandung, Jawa Barat 40111</span>
+            <div class="msg-time">09:42</div>
+          </div>
+          <div class="msg msg-in">
+            <span data-i18n-html="wa_msg4">✅ <strong>Ringkasan Order:</strong><br />Kaos Polos x2 + Hoodie x1<br />Ongkir JNE REG: Rp 18.000<br /><strong>Total Bayar: Rp 383.000</strong><br /><br />Transfer ke BCA 1234567890<br />a/n Toko Online Saya 🏦</span>
+            <div class="msg-time">09:42</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 6rem 3rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        ellipse 60% 50% at 70% 40%,
+        rgba(37, 211, 102, 0.08) 0%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 40% 40% at 20% 80%,
+        rgba(170, 238, 68, 0.05) 0%,
+        transparent 60%
+      );
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(37, 211, 102, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 211, 102, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+
+  .hero h1 {
+    font-family: "Fraunces", serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .hero h1 .outline {
+    -webkit-text-stroke: 1px var(--cream);
+    color: transparent;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--green);
+    color: var(--ink);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-family: "Syne", sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-primary:hover {
+    background: var(--lime);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid rgba(245, 242, 232, 0.2);
+    color: var(--cream);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-family: "Syne", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--green);
+    color: var(--green);
+    transform: translateY(-2px);
+  }
+
+  /* WA MOCKUP */
+  .hero-mockup {
+    margin-top: 4rem;
+    position: relative;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .wa-chat {
+    background: #0b1519;
+    border-radius: 20px;
+    width: 340px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(37, 211, 102, 0.2);
+    box-shadow:
+      0 40px 100px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(37, 211, 102, 0.05);
+  }
+
+  .wa-header {
+    background: #1f2c34;
+    padding: 1rem 1rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .wa-avatar {
+    width: 36px;
+    height: 36px;
+    background: var(--green);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+  }
+
+  .wa-header-info h4 {
+    font-family: "Syne", sans-serif;
+    font-size: 0.8rem;
+    color: #e9eef0;
+    font-weight: 600;
+  }
+
+  .wa-header-info p {
+    font-size: 0.6rem;
+    color: var(--green);
+  }
+
+  .wa-body {
+    padding: 1rem;
+    background: #0d1418;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .msg {
+    max-width: 80%;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    animation: msgIn 0.3s ease both;
+  }
+
+  .msg-in {
+    background: #1f2c34;
+    color: #e9eef0;
+    align-self: flex-start;
+    border-radius: 0 8px 8px 8px;
+  }
+
+  .msg-out {
+    background: #005c4b;
+    color: #e9eef0;
+    align-self: flex-end;
+    border-radius: 8px 0 8px 8px;
+  }
+
+  .msg-time {
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 2px;
+    text-align: right;
+  }
+
+  .msg:nth-child(1) {
+    animation-delay: 0.5s;
+  }
+  .msg:nth-child(2) {
+    animation-delay: 0.9s;
+  }
+  .msg:nth-child(3) {
+    animation-delay: 1.3s;
+  }
+  .msg:nth-child(4) {
+    animation-delay: 1.7s;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 5rem 1.5rem 2rem;
+    }
+  }
+</style>

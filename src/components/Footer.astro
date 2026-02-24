@@ -1,0 +1,53 @@
+---
+// Footer.astro - Site footer
+---
+
+<footer>
+  <p data-i18n="footer_copy">© 2025 WA Order System. Dibuat dengan ♥ di Indonesia.</p>
+  <nav class="footer-links">
+    <a href="#" data-i18n="footer_privacy">Kebijakan Privasi</a>
+    <a href="#" data-i18n="footer_terms">Syarat & Ketentuan</a>
+    <a href="#" data-i18n="footer_docs">Dokumentasi</a>
+    <a href="https://wa.me/6289670005828" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    <a href="mailto:nandapuspitarana@gmail.com">✉️ Email</a>
+  </nav>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid rgba(245, 242, 232, 0.06);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 0.65rem;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-links a {
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--green);
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    image: wa-order-landing:v1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - wa_nginx_logs:/var/log/nginx
+    networks:
+      - wa_network
+    restart: unless-stopped
+    container_name: wa-order-landing
+
+volumes:
+  wa_nginx_logs:
+
+
+networks:
+  wa_network:
+    driver: bridge

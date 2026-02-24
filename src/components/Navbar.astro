@@ -1,0 +1,152 @@
+---
+// Navbar.astro - Navigation bar component with language switcher
+---
+
+<nav>
+  <div class="logo">WA<span>Order</span></div>
+  <ul>
+    <li><a href="#solutions" data-i18n="nav_solutions">Solusi</a></li>
+    <li><a href="#fitur" data-i18n="nav_features">Fitur</a></li>
+    <li><a href="#harga" data-i18n="nav_pricing">Harga</a></li>
+    <li><a href="#kontak" class="nav-cta" data-i18n="nav_cta">Konsultasi Gratis</a></li>
+  </ul>
+  <div class="lang-switcher" id="langSwitcher" aria-label="Switch language">
+    <button class="lang-btn active" id="btn-id" data-lang="id" title="Bahasa Indonesia">
+      <span class="lang-flag">🇮🇩</span>
+      <span class="lang-code">ID</span>
+    </button>
+    <div class="lang-divider"></div>
+    <button class="lang-btn" id="btn-en" data-lang="en" title="English">
+      <span class="lang-flag">🇺🇸</span>
+      <span class="lang-code">EN</span>
+    </button>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(10, 15, 13, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(37, 211, 102, 0.1);
+  }
+
+  .logo {
+    font-family: "Syne", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--green);
+  }
+
+  .logo span {
+    color: var(--cream);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav a:hover {
+    color: var(--lime);
+  }
+
+  .nav-cta {
+    background: var(--green);
+    color: var(--ink) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--lime) !important;
+    transform: translateY(-1px);
+  }
+
+  /* Language Switcher */
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(245, 242, 232, 0.05);
+    border: 1px solid rgba(245, 242, 232, 0.1);
+    border-radius: 100px;
+    padding: 0.2rem 0.3rem;
+    gap: 0.15rem;
+  }
+
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 100px;
+    transition: all 0.2s;
+    color: var(--muted);
+    font-family: "Syne", sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .lang-btn:hover {
+    color: var(--cream);
+    background: rgba(245, 242, 232, 0.06);
+  }
+
+  .lang-btn.active {
+    background: var(--green);
+    color: var(--ink);
+  }
+
+  .lang-flag {
+    font-size: 0.85rem;
+    line-height: 1;
+  }
+
+  .lang-divider {
+    width: 1px;
+    height: 12px;
+    background: rgba(245, 242, 232, 0.1);
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem 1.5rem;
+    }
+
+    nav ul {
+      display: none;
+    }
+
+    .lang-code {
+      display: none;
+    }
+  }
+</style>
